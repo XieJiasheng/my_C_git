@@ -27,10 +27,10 @@ this is a comment3
 this is a comment4
 !
 
-:<<'
+:<<test
 this is a comment5
 this is a comment6
-'
+test
 
 # find substring index
 string="hello world"
@@ -46,3 +46,17 @@ echo "all value of array:${array_num[@]}"
 echo "length of array:${#array_num[*]}"
 echo "one of array:${array_num[3]}"
 echo "one of array:${array_num[4]}"
+
+# parameter passing
+i=0
+for param in $@; do
+    echo "param:$param"
+done
+unset i
+echo 'all param:'${*}
+echo 'all param:'${@}
+echo 'last process id:'${!}
+echo "param num is ${#}"
+echo "current process id:${$}"
+echo "current option:${-}"
+echo "quit state:${?}"
